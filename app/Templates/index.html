@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <body>
+  
+  <h2>Predict Beer Popularity</h2>
+  
+  <form method="POST" action="/">
+    review_aroma:<br>
+    <input type="number" name="review_aroma" value=3>
+    <br><br>
+    review_appearance:<br>
+    <input type="number" name="review_appearance" value=3>
+    <br><br>
+    review_palate:<br>
+    <input type="number" name="review_palate" value=3>
+    <br><br>
+    review_taste:<br>
+    <input type="number" name="review_taste" value=3>
+    <br><br>
+    beer_abv:<br>
+    <input type="number" name="beer_abv" value=5.5>
+    <br><br>
+    <label for="style">Choose a style:</label>
+    <select name="style_enc">
+      <option value="76">76. Light Lager</option>
+      <option value="87">87. Rauchbier</option>
+      <option value="12">12. American IPA</option>
+      <option value="34">34. Chile Beer</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  {% if pred %}
+  <p>The predicted rating of the beer is {{ pred }}</p>
+  {% endif %}
+
+  </body>
+</html>
